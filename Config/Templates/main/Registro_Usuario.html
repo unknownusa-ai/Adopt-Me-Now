@@ -463,35 +463,35 @@
         .paw.tl {
             top: 70px;
             left: calc(50% - 280px);
-            background-image: url('../../static/images/v16_26.png');
+            background-image: url("{{ url_for('static', filename='images/v16_26.png') }}");
             transform: rotate(-18deg);
         }
 
         .paw.tr {
             top: 70px;
             left: calc(50% + 220px);
-            background-image: url('../../static/images/v16_27.png');
+            background-image: url("{{ url_for('static', filename='images/v16_27.png') }}");
             transform: rotate(12deg);
         }
 
         .paw.bl {
             bottom: 90px;
             left: calc(50% - 280px);
-            background-image: url('../../static/images/v16_29.png');
+            background-image: url("{{ url_for('static', filename='images/v16_29.png') }}");
             transform: rotate(10deg);
         }
 
         .paw.br {
             bottom: 90px;
             left: calc(50% + 220px);
-            background-image: url('../../static/images/v16_28.png');
+            background-image: url("{{ url_for('static', filename='images/v16_28.png') }}");
             transform: rotate(-10deg);
         }
 
         .paw.mr {
             top: 50%;
             left: calc(50% + 240px);
-            background-image: url('../../static/images/v16_40.png');
+            background-image: url("{{ url_for('static', filename='images/v16_40.png') }}");
             transform: translateY(-50%) rotate(6deg);
         }
 
@@ -559,7 +559,7 @@
 
             <h1 class="register-title">Crear Cuenta</h1>
 
-            <form method="post" action="http://localhost:5100/registro" id="registerForm">
+                        <form method="POST" action="{{ url_for('Registro_Usuario') }}">
                 <div class="form-group">
                     <label for="user" class="form-label">Usuario</label>
                     <div style="position: relative;">
@@ -610,9 +610,9 @@
             </form>
 
             <div class="login-link">
-                <a href="/iniciar-sesion">¿Ya tienes cuenta? Inicia sesión</a>
+                <a href="{{ url_for('Iniciar_Sesion') }}">¿Ya tienes cuenta? Inicia sesión</a>
                 <div style="margin-top:12px; font-size:14px;">
-                    ¿O eres administrador? <a href="/registro-administrador" style="color:#e08c2b; text-decoration:underline; font-weight:600;">Regístrate</a>
+                    ¿O eres administrador? <a href="{{ url_for('Registro_Administrador') }}" style="color:#e08c2b; text-decoration:underline; font-weight:600;">Regístrate</a>
                 </div>
             </div>
         </div>
@@ -817,6 +817,8 @@
             }, 800);
         })();
     </script>
+
+
 </body>
 
 </html>
